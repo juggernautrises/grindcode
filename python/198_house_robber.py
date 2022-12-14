@@ -12,11 +12,10 @@ def rob(nums):
     second_house = 0
     max_value = 0
     for n in nums:
-        max_value = max(n + first_house, second_house)
-        old_second_house = second_house
-        second_house = max_value
-        first_house = old_second_house
-    return max_value
+        new_second_house = max(n + first_house, second_house)
+        first_house = second_house
+        second_house = new_second_house
+    return second_house
 
 
 houses = [1, 2, 3, 1]
