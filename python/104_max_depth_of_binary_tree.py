@@ -1,27 +1,10 @@
 # https://leetcode.com/problems/maximum-depth-of-binary-tree/
-
+# For the DFS solution, if the root node is none then the height of the node will be 0. Otherwise, the height is at
+# least 1 plus the height of its child nodes. For this specific problem, we just want the max height of either child.
 
 # DFS solution
 def maxDepthRecursive(root):
     if not root:
         return 0
 
-    return 1 + max(maxDepthRecursive(root.left), maxDepthRecursive(root.right))
-
-
-# BFS Solution
-def maxDepthIterative(root):
-    stack = []
-    level = 1
-    stack.append((root, level))
-    max_level = level
-    while stack:
-        node, level = stack.pop()
-        if node.left:
-            stack.append((node.left, level))
-
-        if node.right:
-            stack.append((node.right, level))
-        level = level + 1
-        max_level = max(level, max_level)
-    return max_level
+    return max(maxDepthRecursive(root.left), maxDepthRecursive(root.right)) + 1
