@@ -7,8 +7,8 @@ def combinationSum(candidates, target):
     """
     # For each candidate, we'll attempt to build a value from 0->target (i).
     # If i == candidate, add the candidate by itself
-    # if i-c >0,  iterate through each combination and append the candidate value
-    # The last item in the list will be the combination of the target value`
+    # if i-c >0, iterate through each combination and append the candidate value
+    # The last item in the list will be the combination of the target value
 
     dp = [[] for _ in range(target + 1)]
 
