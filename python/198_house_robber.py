@@ -1,3 +1,4 @@
+# https://leetcode.com/problems/house-robber/
 def rob(nums):
     """
     :type nums: List[int]
@@ -10,7 +11,6 @@ def rob(nums):
 
     first_house = 0
     second_house = 0
-    max_value = 0
     for n in nums:
         new_second_house = max(n + first_house, second_house)
         first_house = second_house
