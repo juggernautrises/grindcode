@@ -11,3 +11,5 @@ def maxSubArray(nums):
         dp[i] = max(dp[i - 1] + nums[i], nums[i])
 
     return max(dp)
+
+print(maxSubArray([5,-3,5]))

@@ -18,11 +18,12 @@ def longestCommonSubsequenceDPForward(text1, text2):
     # Return the last element of the last row
     return dp[-1][-1]
 
+
 # Same algorithm, but starting from the end.
 def longestCommonSubsequence(text1, text2):
     dp = [[0 for _ in range(len(text2) + 1)] for _ in range(len(text1) + 1)]
-    for i in range(len(text1), -1, -1):
-        for j in range(len(text2), -1, -1):
+    for i in range(len(text1) - 1, -1, -1):
+        for j in range(len(text2) - 1, -1, -1):
             if text1[i] == text2[j]:
                 dp[i][j] = dp[i + 1][j + 1] + 1
             else:
@@ -31,7 +32,7 @@ def longestCommonSubsequence(text1, text2):
 
 
 a = 'bl'
-b = 'yby'
+b = 'ybly'
 
 res = longestCommonSubsequence(a, b)
 print(res)
